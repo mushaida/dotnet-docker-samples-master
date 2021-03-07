@@ -14,10 +14,9 @@ phases:
            - echo Build started  on `date`
            - dotnet build -c Release ./aspnetapp/aspnetapp.csproj
 artifacts:
-  files:
-    - '**/*'
-  base-directory: 'C:\codebuild\artifacts\_PublishedWebsites\${env:PROJECT}_Package\Archive\'
+ files:
+    - CodeBuild-SampleCore/build_output/**/*
+    - scripts/**/*
+    - appspec.yml
 
-
-commands:
      
