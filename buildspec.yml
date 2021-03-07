@@ -1,0 +1,19 @@
+version: 0.2
+
+env:
+  variables:
+    PROJECT: aspnet123
+    DOTNET: 3.0
+phases:
+    install:
+        runtime-versions:
+            dotnet: 3.0
+  
+    build:
+        commands:
+          #- dotnet build -c Release Test123.csproj
+           - msbuild aspnetapp.csproj /p:TargetFrameworkVersion=v4.6.1 /p:Configuration=Release /p:DeployIisAppPath="Default Web Site" /p:PackageAsSingleFile=false /p:OutDir=C:\codebuild\artifacts\ /t:Package
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'C:\codebuild\artifacts\_PublishedWebsites\${env:PROJECT}_Package\Archive\'
