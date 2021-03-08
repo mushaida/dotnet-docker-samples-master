@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     PROJECT: aspnet123
-    DOTNET: 2.0
+    DOTNET: 3.0
 phases:
     install:
         runtime-versions:
@@ -11,10 +11,11 @@ phases:
   
     build:
         commands:
-           - echo Build started  on `date`
-           - dotnet build -c Release ./aspnetapp/aspnetapp.csproj
+           - echo Build started on `date`
+           - dotnet build -c Release /aspnetapp/aspnetapp.csproj
+           - dotnet publish -c release -o ./build_output aspnetapp/aspnetapp.csproj
 artifacts:
- files:
-    - CodeBuild-SampleCore/build_output/**/*
-    - scripts/**/*
-    - appspec.yml    
+  files:
+     - aspnetapp/build_output/**/*
+     - scripts/**/*
+     - appspec.yml
