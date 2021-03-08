@@ -7,7 +7,7 @@ files:
   ApplicationStop:
     - location: scripts/stop_service
       timeout: 300
-     # runas: root
+     
 
   ApplicationStart:
     - location: scripts/start_service
