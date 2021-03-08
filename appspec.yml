@@ -1,7 +1,7 @@
 version: 0.0
 os: windows
 files:
-  - source: ./aspnetapp/build_output
+  - source: /aspnetapp/build_output
     destination: c:/inetpub/wwwroot/aspnetapp
  hooks:
   ApplicationStop:
