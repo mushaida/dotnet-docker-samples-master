@@ -1,8 +1,8 @@
 version: 0.0
 os: windows
 files:
-  - source: aspnetapp/build_output
-    destination: c:/inetpub/wwwroot/aspnetapp
+  - source: dotnet-docker-samples-master/build_output
+    destination: c:/inetpub/wwwroot/dotnet-docker-samples-master
  
 hooks:
   ApplicationStop:
