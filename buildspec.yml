@@ -12,7 +12,7 @@ phases:
     build:
         commands:
            - echo Build started on `date`
-           - dotnet build -c Release /aspnetapp/aspnetapp.csproj
+           - dotnet build -c Release aspnetapp/aspnetapp.csproj
            - dotnet publish -c release -o ./build_output aspnetapp/aspnetapp.csproj
 artifacts:
   files:
